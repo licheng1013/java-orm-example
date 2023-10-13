@@ -10,10 +10,19 @@ repositories {
 }
 
 dependencies {
-    // 等同于maven中的 <dependencyManagement>...</dependencyManagement> 标签
-    constraints {
-        implementation("org.springframework.boot:spring-boot-dependencies:2.7.16")
-        implementation("org.springframework.boot:spring-boot-starter-web:2.7.16")
-    }
+
 }
 
+
+subprojects {
+    apply(plugin = "java")
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        implementation("org.springframework.boot:spring-boot-starter-web:2.7.16")
+        // lombok 必须要加上这两个依赖
+        implementation("org.projectlombok:lombok:1.18.22")
+        annotationProcessor("org.projectlombok:lombok:1.18.22")
+    }
+}

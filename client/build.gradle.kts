@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    // spring-boot-web
-    implementation("org.springframework.boot:spring-boot-starter-web:2.7.16")
+    // 依赖 common 模块
+    implementation(project(":common"))
 }
 
