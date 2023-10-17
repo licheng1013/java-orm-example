@@ -27,6 +27,7 @@ subprojects {
         annotationProcessor("org.projectlombok:lombok:1.18.22")
         // mp
         implementation("com.baomidou:mybatis-plus-boot-starter:3.5.3.2")
-
+        // hutool
+        implementation("cn.hutool:hutool-all:5.8.22")
     }
 }

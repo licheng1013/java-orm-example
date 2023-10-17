@@ -1,5 +1,6 @@
 package com.shop.controller;
 
+import com.shop.common.PassToken;
 import com.shop.common.R;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/user")
+@PassToken
 public class UserController {
 
     /**
