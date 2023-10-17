@@ -6,18 +6,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
+/**
+ * 注释
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
+    /**
+     * login
+     */
     @PostMapping("/login")
     public Object login(){
         return R.okMsg("Hello World");
     }
 
+
     @GetMapping("/list")
-    public Object list(){
-        return R.okData("list");
+    public Object list(String name, HttpServletRequest request){
+        return R.okData(name+request.getHeader("token"));
+    }
+
+    @GetMapping("/list2")
+    public Object list2(){
+        return R.okData("list2");
     }
 
 }

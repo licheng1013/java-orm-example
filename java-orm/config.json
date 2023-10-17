@@ -1,0 +1,14 @@
+{
+  "controllerBox": true,
+  "controllerPath": "D:/my-study/my-shop/common/src/main/java/com/shop/controller",
+  "daoBox": true,
+  "daoPath": "D:/my-study/my-shop/common/src/main/java/com/shop/dao",
+  "entityBox": true,
+  "entityPath": "D:/my-study/my-shop/common/src/main/java/com/shop/entity",
+  "packagePath": "D:/my-study/my-shop/common/src/main/java/com/shop",
+  "prefix": "t_",
+  "restart": false,
+  "serviceBox": true,
+  "servicePath": "D:/my-study/my-shop/common/src/main/java/com/shop/service",
+  "url": "http://localhost:8080"
+}
