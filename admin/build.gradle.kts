@@ -14,6 +14,5 @@ dependencies {
     implementation(project(":common"))
     implementation("mysql:mysql-connector-java:8.0.28")
     implementation("com.alibaba:druid:1.1.12")
-
 }
 

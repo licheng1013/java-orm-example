@@ -40,4 +40,5 @@
 | jwt           | [java-jwt](https://github.com/auth0/java-jwt)        | 🆗 |
 | cors          | 跨域处理                                                 | 🆗 |
 | redis         |                                                      | ❌  |
+| 多模块           |                                                      | 🆗 |
 

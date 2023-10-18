@@ -1,4 +1,4 @@
-package com.shop.controller;
+package com.demo.controller;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;

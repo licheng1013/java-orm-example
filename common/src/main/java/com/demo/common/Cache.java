@@ -1,4 +1,4 @@
-package com.shop.common;
+package com.demo.common;
 
 public interface Cache {
     void set(String key, String value);

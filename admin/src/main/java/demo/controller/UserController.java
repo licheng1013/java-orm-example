@@ -1,7 +1,7 @@
-package com.shop.controller;
+package demo.controller;
 
-import com.shop.common.PassToken;
-import com.shop.common.R;
+import com.demo.common.PassToken;
+import com.demo.common.R;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.shop.common;
+package com.demo.common;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.servlet.ServletUtil;

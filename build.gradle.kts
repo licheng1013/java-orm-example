@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "com.aiwan"
+group = "com.demo"
 version = "1.0-SNAPSHOT"
 
 repositories {

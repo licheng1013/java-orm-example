@@ -1,6 +1,6 @@
 package $pName.controller;
 
-import com.shop.common.R;
+import com.demo.common.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import $pName.entity.$className;
