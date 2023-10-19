@@ -35,9 +35,10 @@ public class AdminController {
     }
 
 
-    @GetMapping
+    @GetMapping("/userInfo")
     public Object userInfo(){
         return R.okData(adminService.userInfo());
     }
+
 
 }
