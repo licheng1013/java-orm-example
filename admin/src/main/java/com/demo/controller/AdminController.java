@@ -1,5 +1,7 @@
 package com.demo.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.demo.common.PassToken;
 import com.demo.common.R;
 import com.demo.entity.Admin;
@@ -23,20 +25,32 @@ public class AdminController {
 
     @PassToken
     @PostMapping("/login")
-    public Object login(Admin admin){
+    public Object login(Admin admin) {
         return R.okData(adminService.login(admin));
     }
 
+    /**
+     * @Param(size=1)
+     */
+    @PassToken
+    @GetMapping("/page") //分页
+    public Object page(Page<Admin> page, Admin v) {
+        return R.okData(adminService.page(page, new QueryWrapper<>(v)));
+    }
 
+
+    /**
+     * ,
+     */
     @PassToken
     @GetMapping("/index")
-    public Object index(){
+    public Object index() {
         return R.okMsg("Hello World");
     }
 
 
     @GetMapping("/userInfo")
-    public Object userInfo(){
+    public Object userInfo() {
         return R.okData(adminService.userInfo());
     }
 
