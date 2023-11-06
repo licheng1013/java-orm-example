@@ -4,14 +4,11 @@ import com.demo.common.PassToken;
 import com.demo.common.R;
 import com.demo.entity.Admin;
 import com.demo.service.AdminService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 注释
@@ -30,22 +27,25 @@ public class AdminController {
         return R.okData(adminService.login(admin));
     }
 
-
-
     /**
-     * @Param(userName=aa,password=aaabbaa) 
-     * @Param()
+     * @Param(size=1)
      */
     @PassToken
+    @GetMapping("/page") //分页
+    public Object page(Page<Admin> page, Admin v) {
+        return R.okData(adminService.page(page, new QueryWrapper<>(v)));
+    }
+
+
+    @PassToken
     @GetMapping("/index")
-    public Object index(HttpServletRequest request,Admin admin){
-        System.out.println(admin);
-        return R.okData("Hello World" + request.getHeader("token") + admin.getUserName());
+    public Object index() {
+        return R.okMsg("Hello World");
     }
 
 
     @GetMapping("/userInfo")
-    public Object userInfo(){
+    public Object userInfo() {
         return R.okData(adminService.userInfo());
     }
 
