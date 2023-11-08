@@ -1,4 +1,4 @@
-import {createProdMockServer} from 'vite-plugin-mock/es/createProdMockServer';
+import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
 
 // 问题描述
 // 1. `import.meta.globEager` 已被弃用, 需要升级vite版本,有兼容问题

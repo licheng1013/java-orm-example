@@ -70,6 +70,7 @@
   import { cloneDeep } from 'lodash-es';
   import { areaRecord } from '/@/api/demo/cascader';
   import { uploadApi } from '/@/api/sys/upload';
+  // import { isArray } from '/@/utils/is';
 
   const valueSelectA = ref<string[]>([]);
   const valueSelectB = ref<string[]>([]);
@@ -464,6 +465,49 @@
       },
     },
     {
+      field: 'field33',
+      component: 'ApiTreeSelect',
+      label: '远程懒加载下拉树',
+      helpMessage: ['ApiTreeSelect组件', '使用接口提供的数据生成选项'],
+      required: true,
+      componentProps: {
+        api: () => {
+          return new Promise((resolve) => {
+            resolve([
+              {
+                title: 'Parent Node',
+                value: '0-0',
+              },
+            ]);
+          });
+        },
+        async: true,
+        onChange: (e, v) => {
+          console.log('ApiTreeSelect====>:', e, v);
+        },
+        onLoadData: ({ treeData, resolve, treeNode }) => {
+          console.log('treeNode====>:', treeNode);
+          setTimeout(() => {
+            const children: Recordable[] = [
+              { title: `Child Node ${treeNode.eventKey}-0`, value: `${treeNode.eventKey}-0` },
+              { title: `Child Node ${treeNode.eventKey}-1`, value: `${treeNode.eventKey}-1` },
+            ];
+            children.forEach((item) => {
+              item.isLeaf = false;
+              item.children = [];
+            });
+            treeNode.dataRef.children = children;
+            treeData.value = [...treeData.value];
+            resolve();
+            return;
+          }, 300);
+        },
+      },
+      colProps: {
+        span: 8,
+      },
+    },
+    {
       field: 'field34',
       component: 'ApiRadioGroup',
       label: '远程Radio',
@@ -696,6 +740,34 @@
         disabled: false,
         allowHalf: true,
       },
+    },
+    {
+      field: 'field23',
+      component: 'ImageUpload',
+      label: '上传图片',
+      required: true,
+      defaultValue: [
+        'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+      ],
+      componentProps: {
+        api: uploadApi,
+        accept: ['png', 'jpeg', 'jpg'],
+        maxSize: 2,
+        maxNumber: 1,
+      },
+      // rules: [
+      //   {
+      //     required: true,
+      //     trigger: 'change',
+      //     validator(_, value) {
+      //       if (isArray(value) && value.length > 0) {
+      //         return Promise.resolve();
+      //       } else {
+      //         return Promise.reject('请选择上传图片');
+      //       }
+      //     },
+      //   },
+      // ],
     },
   ];
 

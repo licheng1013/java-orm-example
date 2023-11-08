@@ -1,5 +1,5 @@
-import {MockMethod} from 'vite-plugin-mock';
-import {resultSuccess} from '../_util';
+import { MockMethod } from 'vite-plugin-mock';
+import { resultSuccess } from '../_util';
 
 const areaList: any[] = [
   {

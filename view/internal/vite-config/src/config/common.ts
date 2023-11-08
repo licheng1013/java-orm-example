@@ -1,6 +1,6 @@
-import {presetTypography, presetUno} from 'unocss';
+import { presetTypography, presetUno } from 'unocss';
 import UnoCSS from 'unocss/vite';
-import {type UserConfig} from 'vite';
+import { type UserConfig } from 'vite';
 
 const commonConfig: (mode: string) => UserConfig = (mode) => ({
   server: {

@@ -10,7 +10,7 @@ import { BasicColumn, FormSchema } from '/@/components/Table';
  *  ...
  * }
  */
-const deptMap = (() => {
+export const deptMap = (() => {
   const pDept = ['华东分部', '华南分部', '西北分部'];
   const cDept = ['研发部', '市场部', '商务部', '财务部'];
 
@@ -89,10 +89,12 @@ export const accountFormSchema: FormSchema[] = [
         message: '请输入用户名',
       },
       {
+        trigger: 'blur',
         validator(_, value) {
           return new Promise((resolve, reject) => {
+            if (!value) return resolve();
             isAccountExist(value)
-              .then(() => resolve())
+              .then(resolve)
               .catch((err) => {
                 reject(err.message || '验证失败');
               });

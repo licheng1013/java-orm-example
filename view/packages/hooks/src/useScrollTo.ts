@@ -1,4 +1,4 @@
-import {shallowRef, unref} from 'vue';
+import { shallowRef, unref } from 'vue';
 
 interface UseScrollToOptions {
   el: any;

@@ -1,7 +1,7 @@
-import {defHttp} from '/@/utils/http/axios';
-import {GetUserInfoModel, LoginParams, LoginResultModel} from './model/userModel';
+import { defHttp } from '/@/utils/http/axios';
+import { LoginParams, LoginResultModel, GetUserInfoModel } from './model/userModel';
 
-import {ErrorMessageMode} from '/#/axios';
+import { ErrorMessageMode } from '/#/axios';
 
 enum Api {
   Login = '/login',

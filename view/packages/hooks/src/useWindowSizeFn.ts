@@ -1,5 +1,5 @@
-import {type AnyFunction} from '@vben/types';
-import {tryOnMounted, tryOnUnmounted, useDebounceFn} from '@vueuse/core';
+import { type AnyFunction } from '@vben/types';
+import { tryOnMounted, tryOnUnmounted, useDebounceFn } from '@vueuse/core';
 
 interface UseWindowSizeOptions {
   wait?: number;

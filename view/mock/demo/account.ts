@@ -1,6 +1,6 @@
-import {MockMethod} from 'vite-plugin-mock';
-import {resultError, resultSuccess} from '../_util';
-import {ResultEnum} from '../../src/enums/httpEnum';
+import { MockMethod } from 'vite-plugin-mock';
+import { resultSuccess, resultError } from '../_util';
+import { ResultEnum } from '../../src/enums/httpEnum';
 
 const userInfo = {
   name: 'Vben',

@@ -1,14 +1,14 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
-import {type PluginOption} from 'vite';
+import { type PluginOption } from 'vite';
 import purgeIcons from 'vite-plugin-purge-icons';
 
-import {createConfigPluginConfig} from './appConfig';
-import {configCompressPlugin} from './compress';
-import {configHtmlPlugin} from './html';
-import {configMockPlugin} from './mock';
-import {configSvgIconsPlugin} from './svgSprite';
-import {configVisualizerConfig} from './visualizer';
+import { createConfigPluginConfig } from './appConfig';
+import { configCompressPlugin } from './compress';
+import { configHtmlPlugin } from './html';
+import { configMockPlugin } from './mock';
+import { configSvgIconsPlugin } from './svgSprite';
+import { configVisualizerConfig } from './visualizer';
 
 interface Options {
   isBuild: boolean;
