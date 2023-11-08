@@ -1,14 +1,14 @@
 {
   "controllerBox": true,
-  "controllerPath": "D:/IdeaProjects/java-orm-example/admin/src/main/java/com/demo/controller",
-  "daoBox": false,
-  "daoPath": "D:/IdeaProjects/java-orm-example/common/src/main/java/com/demo/dao",
-  "entityBox": false,
-  "entityPath": "D:/IdeaProjects/java-orm-example/common/src/main/java/com/demo/entity",
-  "packagePath": "D:/IdeaProjects/java-orm-example/common/src/main/java/com/demo",
+  "controllerPath": "$PROJECT$/admin/src/main/java/com/demo/controller",
+  "daoBox": true,
+  "daoPath": "$PROJECT$/common/src/main/java/com/demo/dao",
+  "entityBox": true,
+  "entityPath": "$PROJECT$/common/src/main/java/com/demo/entity",
+  "packagePath": "$PROJECT$/common/src/main/java/com/demo",
   "prefix": "t_",
   "restart": false,
-  "serviceBox": false,
-  "servicePath": "D:/IdeaProjects/java-orm-example/common/src/main/java/com/demo/service",
+  "serviceBox": true,
+  "servicePath": "$PROJECT$/common/src/main/java/com/demo/service",
   "url": "http://localhost:8080"
 }
