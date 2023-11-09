@@ -18,6 +18,10 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(ServiceException.class)
     public R<String> doHandleServiceException(ServiceException e) {
+        log.info("请求参数: {}",HttpServletUtil.getParamMap());
+        log.info("请求路径: {}",HttpServletUtil.getPath());
+        //log.info("请求体: {}",HttpServletUtil.getBody());
+        log.info("错误信息:", e);
         return R.fail(e.getMessage());
     }
 

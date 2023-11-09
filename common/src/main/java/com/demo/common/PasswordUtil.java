@@ -10,6 +10,6 @@ public class PasswordUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(password("123456", ""));
+        System.out.println(password("123456", "7702151f-f8e6-47d7-82c7-7a8ec21c16b1"));
     }
 }

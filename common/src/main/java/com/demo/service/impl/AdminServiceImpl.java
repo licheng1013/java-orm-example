@@ -1,5 +1,6 @@
 package com.demo.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.demo.common.*;
 import com.demo.dao.AdminDao;
@@ -21,9 +22,13 @@ public class AdminServiceImpl extends ServiceImpl<AdminDao, Admin> implements Ad
         String errorMsg = "账号或密码错误";
         Assert.nullOrEmpty(admin.getUserName(), errorMsg);
         Assert.nullOrEmpty(admin.getPassword(), errorMsg);
-        Admin one = getOne(lambdaQuery().eq(Admin::getUserName, admin.getUserName()));
+
+        LambdaQueryWrapper<Admin> lambdaQuery = new LambdaQueryWrapper<>();
+        lambdaQuery.eq(Admin::getUserName, admin.getUserName());
+
+        Admin one = getOne(lambdaQuery);
         Assert.nullOrEmpty(one, errorMsg);
-        String password = PasswordUtil.password(one.getPassword(), one.getSalt());
+        String password = PasswordUtil.password(admin.getPassword(), one.getSalt());
         if (!password.equals(one.getPassword())){
             throw new ServiceException(errorMsg);
         }

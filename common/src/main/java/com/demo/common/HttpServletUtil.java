@@ -73,4 +73,10 @@ public final class HttpServletUtil {
             }
         }
     }
+
+    public static String getBody() {
+        // 复制一份请求体
+        HttpServletRequest request = getHttpServletRequest();
+        return ServletUtil.getBody(request);
+    }
 }
