@@ -301,6 +301,10 @@ export function useDataSource(
         params = (await beforeFetch(params)) || params;
       }
 
+      // 调整参数
+      params.size = params.pageSize
+      params.current = params.page
+
       const res = await api(params);
       rawDataSourceRef.value = res;
 

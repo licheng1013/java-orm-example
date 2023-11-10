@@ -132,8 +132,6 @@ const [registerTable, {reload}] = useTable({
   },
 
   api: async (params) => {
-    params.size = params.pageSize
-    console.log(params);
     let data = await userInfoList(params)
     return {items: data.list, total: data.total}
   },
@@ -154,7 +152,7 @@ function handleDelete(record: Recordable) {
     title: "提示",
     content: "你正在进行删除操作...",
     onOk: async () => {
-      userInfoDelete( [record.id]).then(res => {
+      userInfoDelete([record.id]).then(res => {
         success("删除成功");
         reload();
       });
