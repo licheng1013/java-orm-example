@@ -27,7 +27,7 @@ public class $classNameController {
 
     @GetMapping("/page") //分页
     public Object page(Page<$className> page,$className v){
-        return R.okData(PageDto.warp(vService.page(page, new LambdaQueryWrapper<>(v).orderByDesc(Admin::getCreateTime))));
+        return R.okData(PageDto.warp(vService.page(page, new LambdaQueryWrapper<>(v).orderByDesc($className::getCreateTime))));
     }
 
     @PostMapping("/delete") //多条删除 => 1,2,3
