@@ -8,10 +8,7 @@ import com.demo.dto.PageDto;
 import com.demo.entity.Admin;
 import com.demo.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -58,19 +55,19 @@ public class AdminController {
 
 
     @PostMapping("/delete") //多条删除 => 1,2,3
-    public Object deleteAll(ArrayList<String> ids){
+    public Object deleteAll(@RequestBody ArrayList<String> ids){
         //vService.removeByIds(ids);
         return R.okMsg("删除所有成功(演示不允许删除)!");
     }
 
     @PostMapping("/insert") //插入
-    public Object insert( Admin v){
+    public Object insert(@RequestBody Admin v){
         vService.save(v);
         return R.okMsg("插入成功!");
     }
 
     @PostMapping("/update") //修改
-    public Object update( Admin v){
+    public Object update(@RequestBody Admin v){
         vService.updateById(v);
         return R.okMsg("修改成功!");
     }

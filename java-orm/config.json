@@ -1,4 +1,5 @@
 {
+  "apiPath": "$PROJECT$/view/src/pages/api",
   "controllerBox": true,
   "controllerPath": "$PROJECT$/admin/src/main/java/com/demo/controller",
   "daoBox": true,
@@ -8,7 +9,10 @@
   "packagePath": "$PROJECT$/common/src/main/java/com/demo",
   "prefix": "t_",
   "restart": false,
+  "routerPath": "$PROJECT$/view/src/pages/modules/router",
   "serviceBox": true,
   "servicePath": "$PROJECT$/common/src/main/java/com/demo/service",
-  "url": "http://localhost:8080"
+  "url": "http://localhost:8080",
+  "viewPath": "$PROJECT$/view/src/pages/view",
+  "viewSuffix": "Page.vue"
 }

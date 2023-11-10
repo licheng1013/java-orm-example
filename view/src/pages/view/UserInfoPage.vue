@@ -25,10 +25,12 @@
       <BasicForm @register="registerForm" @submit="handleSubmit"/>
     </BasicModal>
   </div>
+
 </template>
-<script lang="ts" setup>
+
+<script setup lang="ts">
 import {BasicColumn, BasicTable, FormSchema, useTable,TableAction} from "/@/components/Table";
-import {adminDelete, adminInsert,adminList} from "@/pages/api/admin";
+import {userInfoDelete, userInfoInsert, userInfoList} from "/@/pages/api/userInfo";
 import {formatToDateTime} from "@/utils/dateUtil";
 import {useMessage} from "@/hooks/web/useMessage";
 import { BasicModal, useModal } from "@/components/Modal";
@@ -40,41 +42,27 @@ const [registerAdd, {openModal, closeModal}] = useModal();
 
 const schemas: FormSchema[] = [
   {
-    field: "userName",
-    component: "Input",
-    label: "账号",
-    required: true
+    field: `name`,
+    component: 'Input',
+    label: `名称`,
+    required: true,
   },
   {
-    field: "password",
-    component: "Input",
-    label: "密码",
-    required: true
+    field: `nickname`,
+    component: 'Input',
+    label: `昵称`,
+    required: true,
   },
-  {
-    field: "salt",
-    component: "Input",
-    label: "盐",
-    required: true
-  },
-  {
-    field: "nickName",
-    component: "Input",
-    label: "昵称",
-    required: true
-  }
+
 ];
 
 const handleSubmit = (values: Recordable) => {
-  // 时间转换
-  console.log(values);
-  adminInsert(values).then(res => {
+  userInfoInsert(values).then(res => {
     // 插入成功
     success("Success message");
     reload();
     resetFields();
   });
-
 };
 
 const onCloseModal = () => {
@@ -95,27 +83,23 @@ const [registerForm, {submit, resetFields}] = useForm({
 
 
 const columns: BasicColumn[] = [
-  {
-    title: "账号",
-    dataIndex: "userName",
-  },
-  {
-    title: "密码",
-    dataIndex: "password",
-  },
-  {
-    title: "盐",
-    dataIndex: "salt",
-  },
-  {
-    title: "昵称",
-    dataIndex: "nickName",
-  },
-  {
-    title: "创建时间",
-    dataIndex: "createTime",
-    format: text => formatToDateTime(text)
-  }
+    {
+      title: "主键",
+      dataIndex: "id",
+    },
+    {
+      title: "名称",
+      dataIndex: "name",
+    },
+    {
+      title: "昵称",
+      dataIndex: "nickname",
+    },
+    {
+      title: "创建时间",
+      dataIndex: "createTime",
+    },
+
 ];
 
 
@@ -134,22 +118,23 @@ const [registerTable, {reload}] = useTable({
     labelWidth: 50,
     schemas: [
       {
-        field: `userName`,
-        label: `账号`,
+        field: `name`,
+        label: `名称`,
         component: 'Input',
       },
       {
-        field: `nickName`,
+        field: `nickname`,
         label: `昵称`,
         component: 'Input',
-      }
+      },
+
     ],
   },
 
   api: async (params) => {
     params.size = params.pageSize
     console.log(params);
-    let data = await adminList(params)
+    let data = await userInfoList(params)
     return {items: data.list, total: data.total}
   },
   columns: columns,
@@ -169,8 +154,8 @@ function handleDelete(record: Recordable) {
     title: "提示",
     content: "你正在进行删除操作...",
     onOk: async () => {
-      adminDelete({ids: record.id}).then(res => {
-        success("删除成功,此处用于演示");
+      userInfoDelete( [record.id]).then(res => {
+        success("删除成功");
         reload();
       });
     }
@@ -178,3 +163,7 @@ function handleDelete(record: Recordable) {
 }
 
 </script>
+
+<style scoped lang="less">
+
+</style>
