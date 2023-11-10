@@ -3,7 +3,7 @@ package $pName.controller;
 import com.demo.common.R;
 import com.demo.dto.PageDto;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import $pName.entity.$className;
 import $pName.service.$classNameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class $classNameController {
 
     @GetMapping("/page") //分页
     public Object page(Page<$className> page,$className v){
-        return R.okData(PageDto.warp(vService.page(page, new QueryWrapper<>(v))));
+        return R.okData(PageDto.warp(vService.page(page, new LambdaQueryWrapper<>(v).orderByDesc(Admin::getCreateTime))));
     }
 
     @PostMapping("/delete") //多条删除 => 1,2,3
