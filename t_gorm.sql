@@ -11,7 +11,7 @@
  Target Server Version : 80029 (8.0.29)
  File Encoding         : 65001
 
- Date: 10/11/2023 14:31:52
+ Date: 10/11/2023 18:10:08
 */
 
 SET NAMES utf8mb4;
@@ -48,11 +48,21 @@ CREATE TABLE `t_user_info`  (
   `nickname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '昵称',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of t_user_info
 -- ----------------------------
-INSERT INTO `t_user_info` VALUES (2, 'aa22a', 'aabbb', '2023-08-05 13:58:10');
+INSERT INTO `t_user_info` VALUES (6, 'asdf', 'asbaba', '2023-11-10 17:41:42');
+INSERT INTO `t_user_info` VALUES (7, 'bbb', 'aaa', '2023-11-10 17:47:49');
+INSERT INTO `t_user_info` VALUES (8, 'bbb', 'aaa', '2023-11-10 17:47:52');
+INSERT INTO `t_user_info` VALUES (9, 'aaa', 'adfasdf', '2023-11-10 17:47:56');
+INSERT INTO `t_user_info` VALUES (10, 'sadadfv', 'afsdfadsf', '2023-11-10 17:48:00');
+INSERT INTO `t_user_info` VALUES (11, 'asdfasdf', 'asdfsdfasd', '2023-11-10 17:48:03');
+INSERT INTO `t_user_info` VALUES (12, 'asdfasdf', 'asdfsdf', '2023-11-10 17:48:06');
+INSERT INTO `t_user_info` VALUES (13, 'adfasdf', 'asdfsadfa', '2023-11-10 17:48:10');
+INSERT INTO `t_user_info` VALUES (14, 'adfasdf', 'adfasdfadf', '2023-11-10 17:48:13');
+INSERT INTO `t_user_info` VALUES (15, 'abasbsbd', 'adsfasdf', '2023-11-10 17:48:18');
+INSERT INTO `t_user_info` VALUES (16, 'asdbsb', 'sadfasdfsdf', '2023-11-10 17:48:35');
 
 SET FOREIGN_KEY_CHECKS = 1;
