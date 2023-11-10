@@ -1,7 +1,4 @@
-export function ${methodName}(#{${method}?get=params,post=data,default=params}) {
-  return request({
-    url: '${path}',
-    method: '${method}',
-    #{${method}?get=params,post=data,default=params}
-  })
+export function ${methodName}(params: any) {
+  return defHttp.${method}<any>({url: "${path}", params,}
+  );
 }

@@ -7,7 +7,6 @@ import { PageEnum } from '/@/enums/pageEnum';
 import { ROLES_KEY, TOKEN_KEY, USER_INFO_KEY } from '/@/enums/cacheEnum';
 import { getAuthCache, setAuthCache } from '/@/utils/auth';
 import { GetUserInfoModel, LoginParams } from '/@/api/sys/model/userModel';
-import { doLogout, getUserInfo } from '/@/api/sys/user';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { useMessage } from '/@/hooks/web/useMessage';
 import { router } from '/@/router';
@@ -16,7 +15,7 @@ import { RouteRecordRaw } from 'vue-router';
 import { PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic';
 import { isArray } from '/@/utils/is';
 import { h } from 'vue';
-import {login} from "@/pages/api/admin";
+import {adminUserinfo, login} from "@/pages/api/admin";
 
 interface UserState {
   userInfo: Nullable<UserInfo>;
@@ -95,8 +94,9 @@ export const useUserStore = defineStore({
           userName:loginParams.username,
           password:loginParams.password
         }, mode);
+
         console.log(data)
-        const { token } = data;
+        const token  = data.token;
 
         // save token
         this.setToken(token);
@@ -129,8 +129,8 @@ export const useUserStore = defineStore({
     },
     async getUserInfoAction(): Promise<UserInfo | null> {
       if (!this.getToken) return null;
-      const userInfo = await getUserInfo();
-      const { roles = [] } = userInfo;
+      const userInfo = await adminUserinfo(null);
+      const roles = userInfo.roles;
       if (isArray(roles)) {
         const roleList = roles.map((item) => item.value) as RoleEnum[];
         this.setRoleList(roleList);
@@ -147,7 +147,7 @@ export const useUserStore = defineStore({
     async logout(goLogin = false) {
       if (this.getToken) {
         try {
-          await doLogout();
+          //await doLogout();
         } catch {
           console.log('注销Token失败');
         }
