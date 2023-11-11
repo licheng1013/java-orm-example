@@ -50,13 +50,19 @@
 | 多模块           |                                                      | 🆗 |
 
 ## 起步
+
 - 1.克隆项目
 
 ### 后端
+
+- jdk17+(jdk8没有试过), maven3.x+, mysql8.x+
 - 1.创建数据库并导入sql进去
-- 2.运行 AdminApp.java 启动后端项目
+- 2.admin/src/main/resources/application.yml 修改数据库配置
+- 3.运行 AdminApp.java 启动后端项目
 
 ### 前端
+
+- node v16.20+
 - 1.view目录下 pnpm install 安装依赖
 - 2.view目录下 pnpm dev 启动项目
 - 3.view目录下 pnpm run build 打包项目
