@@ -26,6 +26,15 @@
 - ![](image/img_2.png)
 - ![](image/img_3.png)
 
+
+### 路由导航&路径复制&请求模板
+
+- 路由导航: 导航到API的位置,
+- 路径复制: 直接复制API的路径,
+- 请求模板: 用于前端的请求模板,(支持自定义)
+
+![router-path-code.gif](image/router-path-code.gif)
+
 ### 前端模板生成
 
 - 完全不需要您手动写任何一行代码即可完成此效果
