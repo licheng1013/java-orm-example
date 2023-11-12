@@ -42,10 +42,12 @@
 
 ### 转换flutter代码
 
+- 1.将java类转换为dart类
+- ![](image/flutter-code.gif)
 
 ### 接口简单调试
 
-
+- ![](image/http-request.gif)
 
 ## 项目技术整合
 
