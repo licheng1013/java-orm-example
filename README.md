@@ -20,6 +20,12 @@
 - ❌ 代表未完成，🆗 代表已完成
 - 未完成原因可能是目前并未收到需要此功能的请求
 
+- 模板在 `java-orm` 目录下，或者 `.idea/java-orm`
+- `java-orm/config.json` 插件配置
+- `java-orm/api-code.txt` 客户端请求代码模板
+- `java-orm/mvc` 后端模板
+- `java-orm/view` 前端模板
+
 ## 演示示例
 
 ### 路由导航&路径复制&请求模板
@@ -72,7 +78,6 @@
 - 1.克隆项目
 
 ### 后端
-
 
 - jdk17+(jdk8没有试过), maven3.x+, mysql8.x+
 - 1.创建数据库并导入sql进去
