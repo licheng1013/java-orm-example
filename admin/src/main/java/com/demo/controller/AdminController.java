@@ -25,7 +25,7 @@ public class AdminController {
 
     @PassToken
     @PostMapping("/login")
-    public Object login(Admin admin){
+    public Object login(@RequestBody Admin admin){
         return R.okData(vService.login(admin));
     }
 
