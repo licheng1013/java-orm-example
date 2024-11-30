@@ -1,0 +1,8 @@
+package ${daoPath}
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper
+import org.apache.ibatis.annotations.Mapper
+import ${entityPath}.${entity}
+
+@Mapper
+interface ${entity}Dao : BaseMapper<${entity}>

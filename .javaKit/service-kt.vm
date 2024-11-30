@@ -1,0 +1,6 @@
+package ${servicePath}
+
+import com.baomidou.mybatisplus.extension.service.IService
+import ${entityPath}.${entity}
+
+interface ${entity}Service : IService<${entity}>

@@ -1,0 +1,30 @@
+package ${apiPath}
+
+import ${entityPath}.${entity}
+import ${servicePath}.${entity}Service
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+@RequestMapping("${routerPath}")
+class ${entity}Api {
+
+    @Autowired
+    lateinit var ${tableName}Service: ${entity}Service
+
+    @GetMapping("/list")
+    fun list(): List<${entity}> = ${tableName}Service.list()
+
+    @PostMapping("/update")
+    fun update(${tableName}: ${entity}) = ${tableName}Service.updateById(${tableName})
+
+    @PostMapping("/delete")
+    fun delete(id: Int) = ${tableName}Service.removeById(id)
+
+    @PostMapping("/insert")
+    fun insert(${tableName}: ${entity}) = ${tableName}Service.save(${tableName})
+
+}

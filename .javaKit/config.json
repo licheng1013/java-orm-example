@@ -1,0 +1,13 @@
+{
+  "basePath" : "${project}/src/main/kotlin/org/aiwan",
+  "apiPath" : "${project}/src/main/kotlin/org/aiwan/api",
+  "servicePath" : "${project}/src/main/kotlin/org/aiwan/service",
+  "daoPath" : "${project}/src/main/kotlin/org/aiwan/dao",
+  "entityPath" : "${project}/src/main/kotlin/org/aiwan/entity",
+  "delPrefix" : "t_",
+  "apiCheck" : true,
+  "serviceCheck" : true,
+  "daoCheck" : true,
+  "entityCheck" : true,
+  "languageEnum" : "Kotlin"
+}

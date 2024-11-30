@@ -1,4 +1,0 @@
-export function ${methodName}(params: any) {
-  return defHttp.${method}<any>({url: "${path}", params,}
-  );
-}

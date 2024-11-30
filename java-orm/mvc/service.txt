@@ -1,8 +1,0 @@
-package $pName.service;
-
-import com.baomidou.mybatisplus.extension.service.IService;
-import $pName.entity.$className;
-
-public interface $classNameService extends IService<$className> {
-
-}

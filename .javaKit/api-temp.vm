@@ -1,0 +1,3 @@
+static Future<dynamic> ${methodName}({Map<String, dynamic>? params}) async {
+    return await HttpUtil.${requestMethod}("${path}", params: params);
+}

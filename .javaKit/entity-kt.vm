@@ -1,0 +1,10 @@
+package ${entityPath}
+
+import java.util.Date
+
+data class ${entity}(
+#foreach( ${field} in ${fields})
+    /** ${field.comment} */
+    var ${field.name}: ${field.langType}? = null,
+#end
+)
